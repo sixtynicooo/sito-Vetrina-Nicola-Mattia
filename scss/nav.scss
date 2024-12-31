@@ -1,0 +1,37 @@
+/* Stile generale del menu di navigazione */
+.main-nav {
+  background-color: #333; /* Sfondo scuro */
+  padding: 10px 0;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista orizzontale */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Disposizione in riga */
+  justify-content: center;
+}
+
+/* Elementi della lista */
+.main-nav ul li {
+  margin: 0 15px;
+}
+
+/* Collegamenti */
+.main-nav ul li a {
+  text-decoration: none;
+  color: #fff; /* Colore del testo */
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover sugli elementi */
+.main-nav ul li a:hover {
+  background-color: #555; /* Sfondo più chiaro */
+  color: #f1f1f1; /* Testo più chiaro */
+}
