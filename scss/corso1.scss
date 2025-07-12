@@ -1,5 +1,51 @@
 .corso1 {
-  p {
-    color: blueviolet;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  .contenitore-corso h1 {
+    color: #333;
+  }
+
+  .ul {
+    margin-left: 20px;
+  }
+
+  .galleria-corso {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  .sezione-testimonianze {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+
+  .testimonianza {
+    margin-bottom: 15px;
+  }
+
+  .testimonianza span {
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+  }
+
+  .sezione-iscrizione {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .btn-iscriviti {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .btn-iscriviti:hover {
+    background-color: #0056b3;
   }
 }

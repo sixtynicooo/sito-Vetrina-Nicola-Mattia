@@ -8,34 +8,11 @@ include  '../include/nav.php';
         <h1>Benvenuto nel nostro sito!</h1>
         <p>Esplora contenuti unici e scopri di più su di noi. Qui troverai informazioni interessanti, immagini spettacolari e tanto altro.</p>
     </section>
-
-
-
-
-
-
-    <section class="gallery">
-        <h2>Galleria con Descrizione</h2>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <div class="image">
-                    <img src="../img/1.jpg" alt="Descrizione immagine 1">
-                </div>
-                <div class="description">
-                    <h3>Immagine 1</h3>
-                    <p>Questa è la descrizione della prima immagine. Può essere un testo informativo o descrittivo.</p>
-                </div>
-            </div>
-            <div class="controls">
-                <button class="prev">← Precedente</button>
-                <button class="next">Successivo →</button>
-            </div>
-        </div>
-    </section>
-
-
+    <?php
+    // galleria
+    include  '../include/galleria.php';
+    ?>
     <script>
-        let currentIndex = 0;
         const images = [{
                 src: "../img/1.jpg",
                 title: "Immagine 1",
@@ -57,39 +34,9 @@ include  '../include/nav.php';
                 description: "Questa è la descrizione della terza immagine."
             }
         ];
-
-        const imageElement = document.querySelector(".gallery-item .image img");
-        const titleElement = document.querySelector(".gallery-item .description h3");
-        const descriptionElement = document.querySelector(".gallery-item .description p");
-
-        const prevButton = document.querySelector(".controls .prev");
-        const nextButton = document.querySelector(".controls .next");
-
-        function updateGallery() {
-            const image = images[currentIndex];
-            console.log(image)
-            console.log(imageElement)
-
-            imageElement.src = image.src;
-            titleElement.textContent = image.title;
-            descriptionElement.textContent = image.description;
-        }
-
-        prevButton.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length; // Naviga verso la precedente
-            updateGallery();
-        });
-
-        nextButton.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % images.length; // Naviga verso la successiva
-            updateGallery();
-        });
-
-        // Inizializza la galleria
-        updateGallery();
     </script>
-
-
+    <!-- metto codice js per galleria -->
+    <script src="../js/galleria.js" defer></script>
 </main>
 <?php
 // Includi header e navigazione

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/galleria.css">
+    <link rel="stylesheet" href="../css/bannerCookie.css">
+    <script src="../js-scritto/gestioneCookies.js" defer></script>
 </head>
 
 <body>

@@ -34,6 +34,11 @@
   color: #00bfff; /* Blu più chiaro al passaggio del mouse */
 }
 
+.site-footer {
+  position: relative; /* Assicura che lo z-index funzioni */
+  z-index: 1; /* Footer in secondo piano */
+}
+
 /* Media Query per dispositivi più grandi */
 @media (min-width: 768px) {
   .site-footer .footer-content {

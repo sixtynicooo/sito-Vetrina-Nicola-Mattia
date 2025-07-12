@@ -1,13 +1,16 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
+const terser = require('gulp-terser');
 const browserSync = require('browser-sync').create();
 
-// Percorsi dei file SCSS e CSS
+// Percorsi dei file SCSS, CSS e JavaScript
 const paths = {
     scss: './scss/**/*.scss',  // Cartella e tutti i file SCSS
     css: './css/',              // Cartella di destinazione per i file CSS compilati
-    php: './**/*.php'          // Osserva anche tutti i file PHP
+    php: './**/*.php',          // Osserva anche tutti i file PHP
+    js: './js-scritto/**/*.js', // JavaScript personalizzati
+    jsDist: './js/'             // Cartella di destinazione per i file JavaScript minificati
 };
 
 // Task per compilare SCSS e minificare CSS
@@ -19,18 +22,30 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream()); // Invia il CSS compilato a BrowserSync per aggiornare la pagina
 });
 
-// Task per avviare il server e osservare i file PHP
-gulp.task('serve', function () {
-    // Avvia il server di BrowserSync
-    browserSync.init({
-        proxy: 'http://localhost:3000', // Cambia con l'URL del tuo server PHP
-        notify: false   // Disabilita le notifiche di BrowserSync nel browser
-    });
-
-    // Osserva i file SCSS e PHP per le modifiche
-    gulp.watch(paths.scss, gulp.series('sass')); // Guarda i file SCSS per modifiche
-    gulp.watch(paths.php).on('change', browserSync.reload); // Ricarica la pagina quando un file PHP viene modificato
+// Task per minificare JavaScript
+gulp.task('minify-js', function () {
+    return gulp.src(paths.js)         // Sorgente dei file JavaScript
+        .pipe(terser())               // Minifica il JavaScript
+        .pipe(gulp.dest(paths.jsDist)); // Salva il file minificato nella cartella 'js'
 });
 
+// Task per avviare il server e osservare i file
+gulp.task('serve', function (done) {
+    browserSync.init({
+        proxy: 'http://localhost:3000',
+        notify: false
+    });
+
+    gulp.watch(paths.scss, gulp.series('sass'));
+    gulp.watch(paths.js, gulp.series('minify-js', function (innerDone) {
+        browserSync.reload();
+        innerDone();
+    }));
+    gulp.watch(paths.php).on('change', browserSync.reload);
+
+    done();
+});
+
+
 // Task di default
-gulp.task('default', gulp.series('sass', 'serve')); // Esegui sass e poi il server
+gulp.task('default', gulp.series('sass', 'minify-js', 'serve')); // Esegui sass, minify-js e poi il server
