@@ -14,22 +14,22 @@ include  '../include/nav.php';
     ?>
     <script>
         const images = [{
-                src: "../img/1.jpg",
+                src: "../img/home/1.jpg",
                 title: "Immagine 1",
                 description: "Questa è la descrizione della prima immagine."
             },
             {
-                src: "../img/2.jpg",
+                src: "../img/home/2.jpg",
                 title: "Immagine 2",
                 description: "Questa è la descrizione della prima immagine."
             },
             {
-                src: "../img/3.jpg",
+                src: "../img/home/3.jpg",
                 title: "Immagine 2",
                 description: "Questa è la descrizione della seconda immagine."
             },
             {
-                src: "../img/4.jpg",
+                src: "../img/home/4.jpg",
                 title: "Immagine 3",
                 description: "Questa è la descrizione della terza immagine."
             }
