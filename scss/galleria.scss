@@ -1,17 +1,17 @@
 .gallery {
-  /* Stile generale della sezione galleria */
-  /* Stile generale della galleria */
 
   text-align: center;
-  font-family: Arial, sans-serif;
   margin: 20px auto;
+
+  // modifico font descrizione 
+  font-family: Arial, sans-serif;
 
   .gallery-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px; /* Spazio tra immagine e descrizioni */
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -20,14 +20,16 @@
     flex-direction: row;
     align-items: flex-start;
     gap: 20px; /* Spazio tra immagine e contenuto */
+    min-width: 200px;
+    flex: 1;
   }
 
   /* Contenitore immagine */
   .image {
     flex: 1;
-    max-width: 50%; /* L'immagine occupa metà dello spazio */
-    height: 400px; /* Altezza fissa per il contenitore */
-    overflow: hidden; /* Nasconde eventuali parti in eccesso */
+    max-width: 70%;
+    height: 70%; 
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -86,5 +88,23 @@
   .controls img {
     width: 40px;
     height: 40px;
+  }
+}
+/* --- Responsive per mobile --- */
+@media (max-width: 768px) {
+
+.gallery-container .gallery-item {
+    flex-direction: column; /* immagine sopra, descrizione sotto */
+    align-items: center;
+    text-align: center;
+  }
+
+  .gallery-item .image img {
+    max-width: 90%;   /* usa quasi tutta la larghezza disponibile */
+    min-width: unset; /* togli min-width per adattarsi */
+  }
+
+  .gallery-item .details {
+    margin-top: 15px;
   }
 }
