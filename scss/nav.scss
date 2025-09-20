@@ -26,13 +26,12 @@
 }
 
 
-/* --- MEDIA QUERY per mobile --- */
-@media (min-width: 769px) {
-  /* Hover sugli elementi */
-  .main-nav ul a:hover {
-  background-color: #555; /* Sfondo più chiaro */
-  color: #f1f1f1; /* Testo più chiaro */
-}
+.nav-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #fff;
 }
 
 /* Solo per desktop: rendi il blocco più largo */
@@ -41,17 +40,27 @@
     min-width: 100px;      /* larghezza minima del link */
     text-align: center;    /* testo centrato */
   }
+  /* Hover sugli elementi */
+  .main-nav ul a:hover {
+  background-color: #555; /* Sfondo più chiaro */
+  color: #f1f1f1; /* Testo più chiaro */
+}
 }
 
 
 /* --- MEDIA QUERY per mobile --- */
 @media (max-width: 768px) {
   .main-nav {
-  padding: 0 0 0 0;
-}
+    display: flex;
+    flex-direction: column;
+    .nav-menu.active {
+      display: flex;             /* menu visibile quando clicchi */
+    }
+  }
   .main-nav ul {
     flex-direction: column;
     background: #333;
+    display: none; /* menu nascosto */
   }
 
   .main-nav ul li {
@@ -63,5 +72,9 @@
   .main-nav ul a:hover {
   background-color: #555; /* Sfondo più chiaro */
   color: #f1f1f1; /* Testo più chiaro */
-}
+  }
+
+  .nav-toggle {
+    display: block; /* bottone visibile */
+  }
 }
