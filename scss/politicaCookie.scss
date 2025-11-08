@@ -1,0 +1,20 @@
+#cookie-banner-page.cookie-banner {
+ flex: auto;
+ justify-content: center;
+ width: 80%;
+
+   .cookie-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 1rem;
+
+    strong {
+      color: #000;
+      font-weight: 600;
+    }
+  }
+  .cookie-buttons {
+    justify-content: center;
+  }
+}

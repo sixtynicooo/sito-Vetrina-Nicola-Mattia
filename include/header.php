@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/galleria.css">
     <link rel="stylesheet" href="../css/bannerCookie.css">
+    <link rel="stylesheet" href="../css/politicaCookie.css">
     <script src="../js-scritto/gestioneCookies.js" defer></script>
 </head>
 
