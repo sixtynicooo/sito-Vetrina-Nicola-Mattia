@@ -4,7 +4,7 @@ include  '../include/header.php';
 include  '../include/nav.php';
 ?>
 <main class="home-page">
-    <section class="hero">
+    <section class="title-section">
         <h1>Benvenuto nel nostro sito!</h1>
         <p>Esplora contenuti unici e scopri di più su di noi. Qui troverai informazioni interessanti, immagini spettacolari e tanto altro.</p>
     </section>
