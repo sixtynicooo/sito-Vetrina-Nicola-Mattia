@@ -106,17 +106,34 @@
       min-width: 100%;
   }
 }
-  .controls button {
-      button {
-        transition: none;
-        background-color: transparent
-      }
-      button:hover {
-        transform: none ;  /* niente zoom */
-        background-color: transparent ; /* niente colore */
-      }
+/* non voglio vedere controlli su piccoli schermi */
+  .gallery .controls{
+    display: none;
   }
   .gallery-item .details {
-    margin-top: 15px;
+    margin-top: 10px;
+    max-width: 100%; /* I dettagli tutto lo spazio */
   }
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #ccc; /* grigio chiaro */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  transform: scale(1.4);
+  background-color: #999; /* leggermente più scuro al passaggio */
+}
+
+.dot.active {
+  background-color: #444; /* grigio scuro */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); /* ombra sottile grigia */
+  transform: scale(1.4);
+}
 }

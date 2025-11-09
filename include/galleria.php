@@ -9,10 +9,14 @@
             <div class="image">
                 <img />
             </div>
+
+            <!-- controlli per piccoli schermi -->
+            <div id="dot-container-piccoli-schermi"></div>
+
             <div class="details">
                 <div class="description">
-                    <h3>Titolo immagine 1</h3>
-                    <p>Descrizione breve dell'immagine 1.</p>
+                    <h3 id="title-description-img"></h3>
+                    <p id="description-img"></p>
                 </div>
 
             </div>
