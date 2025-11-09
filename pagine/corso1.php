@@ -27,8 +27,8 @@ include  '../include/nav.php';
         // modifica immagini
         const images = [{
                 src: "../img/page1/1.jpg",
-                title: "Immagine 1",
-                description: "Questa è la descrizione della prima immagine."
+                title: "Immagine 1 bbf",
+                description: "111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine.111Questa è la descrizione della prima immagine."
             },
             {
                 src: "../img/page1/2.jpg",
