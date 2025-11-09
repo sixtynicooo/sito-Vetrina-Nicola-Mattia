@@ -126,10 +126,6 @@
   transition: all 0.3s ease;
 }
 
-.dot:hover {
-  transform: scale(1.4);
-  background-color: #999; /* leggermente più scuro al passaggio */
-}
 
 .dot.active {
   background-color: #444; /* grigio scuro */

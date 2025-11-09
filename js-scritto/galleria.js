@@ -23,6 +23,7 @@ function updateGallery() {
 
     descriptionElement.textContent = image.description;
     updateDots()
+    console.log('aggiornato dot')
 }
 
 prevButton.addEventListener("click", () => {
