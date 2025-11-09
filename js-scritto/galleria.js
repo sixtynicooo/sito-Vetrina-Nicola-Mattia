@@ -55,7 +55,7 @@ galleryContainer.addEventListener('touchend', (e) => {
 });
 
 /* gestione piccoli schermi */
-function updateDot(){
+function initDot(){
     const numeroDiSlide = images.length; // numero totale di immagini / slide
     for (let i = 0; i < numeroDiSlide; i++) {
         const dot = document.createElement("span");
@@ -67,6 +67,7 @@ function updateDot(){
         });
         dotPiccoliSchermi.appendChild(dot);
   }
+   updateDots()
 }
 
 /*  aggiorno colori per quello selezionato */
@@ -83,4 +84,4 @@ function updateDots() {
 
 // Inizializza la galleria e dot
 updateGallery();
-updateDot();
+initDot();
