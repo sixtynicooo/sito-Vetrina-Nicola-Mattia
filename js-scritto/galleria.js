@@ -22,6 +22,7 @@ function updateGallery() {
     titleElement.textContent = image.title;
 
     descriptionElement.textContent = image.description;
+    updateDots()
 }
 
 prevButton.addEventListener("click", () => {
@@ -63,7 +64,6 @@ function initDot(){
         dot.addEventListener("click", () => {
             currentIndex = i;
             updateGallery();
-            updateDots()
         });
         dotPiccoliSchermi.appendChild(dot);
   }
