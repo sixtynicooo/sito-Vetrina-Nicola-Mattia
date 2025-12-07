@@ -1,14 +1,13 @@
 // Funzione per accettare i cookie
 function acceptCookies() {
-    localStorage.setItem("cookieAccepted", "true");
+    localStorage.setItem("cookieAccepted",true);
     document.getElementById("cookie-banner").style.display = "none";
 }
 
 // Funzione per cancellare la scelta (rimuove il salvataggio e mostra di nuovo il banner)
 function declineCookies() {
     document.getElementById("cookie-banner").style.display = "none";
-    localStorage.removeItem("googleAnalyticsConsent");
-    localStorage.removeItem("cookieAccepted");
+     localStorage.setItem("cookieAccepted", false);
     location.reload(); // Ricarica la pagina per applicare le modifiche
 }
 

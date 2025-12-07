@@ -5,8 +5,8 @@
 </div>
 
 <script>
-    // Controlla se il cookie è stato accettato
-    if (!localStorage.getItem("cookieAccepted")) {
+    // Controlla se l'utente ha fatto una scelta oppure no
+    if (localStorage.getItem("cookieAccepted")===null) {
         document.getElementById("cookie-banner").style.display = "block";
     }
 
