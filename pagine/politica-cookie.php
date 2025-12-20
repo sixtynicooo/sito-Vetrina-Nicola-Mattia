@@ -13,13 +13,37 @@ include  '../include/nav.php';
   </p>
 
   <div class="cookie-buttons">
-    <button class="accept-btn" onclick="acceptCookies()" style="margin-left: 10px; padding: 8px 12px; border: none; cursor: pointer; background: #4CAF50; color: white;">Accetta</button>
-    <button class="decline-btn" onclick="declineCookies()" style="margin-left: 10px; padding: 8px 12px; border: none; cursor: pointer; background: #d9534f; color: white;">Elimina</button>
+    <button id="button-accept-all"  class="accept-btn" style="margin-left: 10px; padding: 8px 12px; border: none; cursor: pointer; background: #4CAF50; color: white;">Accetta</button>
+    <button id="button-reject-all"  class="decline-btn"  style="margin-left: 10px; padding: 8px 12px; border: none; cursor: pointer; background: #d9534f; color: white;">Elimina</button>
    
   </div>
 </div>
 <p>Cookie</p>
 
+<script>
+//document.addEventListener("DOMContentLoaded", () => {
+console.log('Banner display:', document.getElementById('button-accept-all'));
+
+    if( document.getElementById("button-accept-all") && document.getElementById('button-reject-all')){
+        
+ /*  per pagina politica cookies */
+        document.getElementById("button-accept-all").addEventListener('click', ()=> {
+            setConsent(true)
+            console.log('siii')
+        });
+        document.getElementById('button-reject-all').addEventListener('click', () =>{
+            setConsent(false);
+            deleteCookie('_ga') 
+            deleteCookie(`_ga_${GA_ID.substring(2)}`) 
+            console.log('delete all politic')
+        });
+    }
+
+  
+//})
+
+ 
+</script>
  
 <?php
 // Includi header e navigazione
