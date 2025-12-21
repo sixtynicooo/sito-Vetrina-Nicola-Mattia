@@ -1,7 +1,10 @@
 const GA_ID = "G-QEWQ9GRZY5";
 
+
 // dataLayer + gtag
 window.dataLayer = window.dataLayer || [];
+
+initGtag()
 function gtag() {
   dataLayer.push(arguments);
 }
@@ -53,28 +56,39 @@ function loadGTM() {
   })(window, document, "script", "dataLayer", GA_ID);
 }
 
-// Init base GA
-gtag("js", new Date());
-gtag("config", GA_ID);
-gtag("set", "anonymizeIp", true);
+// anonimizzo e non dò il consenso all'inizio , rifiuto consenso all'inizio, successivamente controllo su localstorage se presente o no
+function initGtag(){
+  console.log('quiii', localStorage.getItem("consentMode"))
+  // Nessun consenso all inizio
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+      personalization_storage: "denied",
+      functionality_storage: "denied",
+      security_storage: "denied",
+    })
 
-// Stato iniziale consenso
-const savedConsent = localStorage.getItem("consentMode");
+  // Stato iniziale consenso
+  const savedConsent = localStorage.getItem("consentMode");
 
-if (savedConsent === null) {
-  // Nessun consenso salvato → tutto negato
-  gtag("consent", "default", {
-    ad_storage: "denied",
-    analytics_storage: "denied",
-    personalization_storage: "denied",
-    functionality_storage: "denied",
-    security_storage: "denied",
-  });
-} else {
-  const consent = JSON.parse(savedConsent);
-
-  if (consent.analytics_storage === "granted") {
-    gtag("consent", "default", consent);
-    loadGTM();
+  if (savedConsent === null) {
+    // Nessun consenso salvato => tutto negato
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+      personalization_storage: "denied",
+      functionality_storage: "denied",
+      security_storage: "denied",
+    });
+  } else {
+    const consent = JSON.parse(savedConsent);
+    if (consent.analytics_storage === "granted") {
+      // Init base GA
+      gtag("js", new Date());
+      gtag("set", "anonymizeIp", true);
+      gtag("consent", "default", consent);
+      gtag("config", GA_ID);
+      loadGTM();
+    }
   }
 }
