@@ -17,8 +17,6 @@ function deleteCookie(name) {
 
 // Imposta il consenso
 function setConsent(accepted) {
-  console.log(accepted);
-
   const consent = {
     functionality_storage: accepted ? "granted" : "denied",
     security_storage: accepted ? "granted" : "denied",
@@ -58,7 +56,6 @@ function loadGTM() {
 
 // anonimizzo e non dò il consenso all'inizio , rifiuto consenso all'inizio, successivamente controllo su localstorage se presente o no
 function initGtag(){
-  console.log('quiii', localStorage.getItem("consentMode"))
   // Nessun consenso all inizio
     gtag("consent", "default", {
       ad_storage: "denied",
@@ -92,3 +89,23 @@ function initGtag(){
     }
   }
 }
+
+// mostro o no banner cookie
+function hideBanner() {
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+ if (localStorage.getItem('consentMode') === null) {
+    /* spefifici per banner */
+        document.getElementById('banner-accept-all').addEventListener('click', function() {
+            setConsent(true);
+            hideBanner();
+        });
+        document.getElementById('banner-reject-all').addEventListener('click', function() {
+            setConsent(false);
+            deleteCookie('_ga') 
+            deleteCookie(`_ga_${GA_ID.substring(2)}`) 
+            hideBanner();
+        });
+       
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
