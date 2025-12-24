@@ -68,7 +68,7 @@ include  '../include/nav.php';
     </p>
 
   </div>
-
+<br>
   <div class="cookie-buttons">
     <button id="button-accept-all"  class="accept-btn" style="margin-left: 10px; padding: 8px 12px; border: none; cursor: pointer; background: #4CAF50; color: white;">Accetta</button>
     <button id="button-reject-all"  class="decline-btn"  style="margin-left: 10px; padding: 8px 12px; border: none; cursor: pointer; background: #d9534f; color: white;">Rifiuta</button>
