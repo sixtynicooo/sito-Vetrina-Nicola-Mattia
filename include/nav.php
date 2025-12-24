@@ -15,5 +15,5 @@
 //echo basename($_SERVER['PHP_SELF'], '.php');
 ?>
 <?php
-include("banner-cookye.php");
+include("banner-cookie.php");
 ?>
